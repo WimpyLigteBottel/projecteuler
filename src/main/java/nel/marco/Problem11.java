@@ -88,13 +88,9 @@ public class Problem11 {
     private long greatestProductDiagonalRight(String[][] digits, int adjustmentNumber) {
         long biggestValue = -1;
         for (int y = 0; y < digits.length - 1 - adjustmentNumber; y++) {
-            for (int x = digits.length - 1; x > 0; x--) {
+            for (int x = digits.length - 1; x > adjustmentNumber; x--) {
                 List<String> digitList = new ArrayList<>();
                 for (int i = 0; i < adjustmentNumber; i++) {
-
-                    if(x - i < 0){
-                        continue;
-                    }
                     String text = digits[y + i][x - i];
                     if (text != null)
                         digitList.add(text);
