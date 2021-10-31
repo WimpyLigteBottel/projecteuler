@@ -13,6 +13,8 @@ and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 Find the sum of the digits in the number 100!
 
 
+answer = 648
+
  */
 public class Problem20 {
 
@@ -27,17 +29,17 @@ public class Problem20 {
 
 
     public Problem20() throws ExecutionException, InterruptedException {
-        System.out.println("answer = " + sumOfDigits(nFactor(BigInteger.valueOf(10))));;
-        System.out.println("answer = " + sumOfDigits(nFactor(BigInteger.valueOf(100))));;
+        BigInteger nFactor = nFactor(BigInteger.valueOf(100L));
+        System.out.println("answer = " + sumOfDigits(nFactor));
     }
 
 
-    public BigInteger nFactor(BigInteger a) {
-        if(a.equals(BigInteger.TWO)){
-            return a;
-        }
 
-        return a.multiply(nFactor(a.min(BigInteger.ONE)));
+    public BigInteger nFactor(BigInteger currentNumber) {
+        if (currentNumber.compareTo(BigInteger.ONE) < 1) {
+            return BigInteger.ONE;
+        }
+        return currentNumber.multiply(nFactor(currentNumber.subtract(BigInteger.ONE)));
     }
 
     public long sumOfDigits(BigInteger a) {
