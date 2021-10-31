@@ -1,4 +1,4 @@
-package nel.marco;
+package nel.marco.p1_10;
 
 
 /*
@@ -30,7 +30,6 @@ Find the thirteen adjacent digits in the 1000-digit number that have the greates
 
  */
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;

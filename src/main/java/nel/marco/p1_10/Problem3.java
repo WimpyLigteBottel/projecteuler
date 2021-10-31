@@ -1,4 +1,4 @@
-package nel.marco;
+package nel.marco.p1_10;
 
 /*
 The prime factors of 13195 are 5, 7, 13 and 29.
